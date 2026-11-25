@@ -439,11 +439,19 @@
   animation: digit 0.35s ease;
 }
 
+.music-bar {
+  position: sticky;
+  top: max(0.75rem, env(safe-area-inset-top));
+  z-index: 30;
+  height: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
 .music-toggle {
   position: absolute;
-  top: max(0.75rem, env(safe-area-inset-top));
   right: max(0.75rem, env(safe-area-inset-right));
-  z-index: 30;
+  pointer-events: auto;
   display: grid;
   place-items: center;
   width: 2.5rem;

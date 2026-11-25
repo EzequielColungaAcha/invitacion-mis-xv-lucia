@@ -89,15 +89,17 @@ export function MusicControl({ active }: { active: boolean }) {
   if (!active) return null;
 
   return (
-    <button
-      type="button"
-      className="music-toggle"
-      data-playing={playing ? "true" : "false"}
-      onClick={() => void toggle()}
-      aria-label={playing ? "Pausar música" : "Reproducir música"}
-      title={ready ? (playing ? "Pausar" : "Música") : "Agregá public/audio/xv.mp3"}
-    >
-      {playing ? <Music2 className="size-4" /> : <VolumeX className="size-4" />}
-    </button>
+    <div className="music-bar pointer-events-none sticky top-[max(0.75rem,env(safe-area-inset-top))] z-30 h-0 w-full">
+      <button
+        type="button"
+        className="music-toggle pointer-events-auto absolute top-0! right-[max(0.75rem,env(safe-area-inset-right))]"
+        data-playing={playing ? "true" : "false"}
+        onClick={() => void toggle()}
+        aria-label={playing ? "Pausar música" : "Reproducir música"}
+        title={ready ? (playing ? "Pausar" : "Música") : "Agregá public/audio/xv.mp3"}
+      >
+        {playing ? <Music2 className="size-4" /> : <VolumeX className="size-4" />}
+      </button>
+    </div>
   );
 }

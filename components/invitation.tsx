@@ -41,14 +41,14 @@ export function Invitation() {
   const open = phase === "open";
 
   return (
-    <main className="flex min-h-dvh justify-center bg-night px-3 py-4 text-foil">
+    <main className="flex min-h-dvh justify-center bg-night text-foil sm:px-3 sm:py-4">
       <div
-        className={`relative w-full max-w-[430px] ${open ? "" : "h-[calc(100dvh-2rem)] overflow-hidden"}`}
+        className={`relative w-full sm:max-w-[480px] ${open ? "" : "h-dvh overflow-hidden sm:h-[calc(100dvh-2rem)]"}`}
       >
         <MusicControl active={open} />
 
         <article
-          className={`invite relative min-h-[calc(100dvh-2rem)] overflow-hidden bg-night ${shown ? "is-open" : "pointer-events-none"}`}
+          className={`invite relative min-h-dvh overflow-hidden bg-night sm:min-h-[calc(100dvh-2rem)] ${shown ? "is-open" : "pointer-events-none"}`}
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
             <div className="plate-zoom relative h-full min-h-full">
@@ -70,7 +70,7 @@ export function Invitation() {
             <Butterflies />
           </div>
 
-          <div className="relative z-10 flex flex-col items-center px-8 pt-36 pb-44 text-center">
+          <div className="relative z-10 flex flex-col items-center px-8 pt-[calc(9rem+env(safe-area-inset-top))] pb-[calc(11rem+env(safe-area-inset-bottom))] text-center">
             <header className={shown ? "rise" : ""}>
               <h1
                 ref={titleRef}
@@ -114,7 +114,7 @@ export function Invitation() {
             <HeartDivider className="mt-3" />
 
             <Reveal className="mt-4 w-full" delay={80} active={shown}>
-              <section className="space-y-3" aria-label="Detalles de la fiesta">
+              <section className="grid grid-cols-2 gap-x-4 gap-y-4 text-left" aria-label="Detalles de la fiesta">
                 <DetailRow icon={<Calendar className="size-5" />} label="Día" value={event.dateLabel} />
                 <DetailRow icon={<Clock className="size-5" />} label="Hora" value={event.timeLabel} />
                 <DetailRow icon={<MapPin className="size-5" />} label="Lugar" value={event.place} />
@@ -131,12 +131,6 @@ export function Invitation() {
                 <p className="poster-copy flex items-center justify-center gap-2 font-serif text-lg">
                   <Phone className="size-5 shrink-0" aria-hidden />
                   Confirmar asistencia hasta el {event.rsvpBy}
-                </p>
-                <p className="poster-copy mt-2 font-serif text-[1.375rem]">
-                  Teléfono:{" "}
-                  <a className="poster-link font-medium" href={event.phoneTel}>
-                    {event.phoneDisplay}
-                  </a>
                 </p>
                 <nav className="mt-4 grid grid-cols-2 gap-2">
                   <a className="poster-action" href={event.mapsUrl} target="_blank" rel="noopener noreferrer">
