@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/base-path";
+
 const startsAt = "2027-01-23T21:30:00-03:00";
 
 const place = "Centro de Jubilados Mi Refugio";
@@ -28,5 +30,5 @@ export const event = {
   mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`,
   whatsappUrl: `https://wa.me/542241547900?text=${encodeURIComponent(whatsappText)}`,
   calendarUrl: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("XV de Lucía")}&dates=20270124T003000Z/20270124T043000Z&details=${encodeURIComponent("Fiesta de XV de Lucía. Confirmar asistencia hasta el 15/12/26 al 2241-547900.")}&location=${encodeURIComponent(`${place}, ${address}, ${city}`)}`,
-  musicSrc: "/audio/xv.mp3",
+  musicSrc: withBase("/audio/xv.mp3"),
 };

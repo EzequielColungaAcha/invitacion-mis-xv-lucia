@@ -9,6 +9,7 @@ import { PlateField } from "@/components/plate-field";
 import { Entrance } from "@/components/entrance";
 import { MusicControl } from "@/components/music";
 import { Reveal } from "@/components/reveal";
+import { withBase } from "@/lib/base-path";
 import { event } from "@/lib/event";
 
 const Butterflies = dynamic(
@@ -53,12 +54,12 @@ export function Invitation() {
             <div className="plate-zoom relative h-full min-h-full">
               <PlateField />
               <img
-                src="/decor/plate-top.png"
+                src={withBase("/decor/plate-top.png")}
                 alt=""
                 className="pointer-events-none absolute top-0 left-0 block h-auto w-full [mask-image:linear-gradient(to_bottom,#000_62%,transparent_100%)]"
               />
               <img
-                src="/decor/plate-bottom.png"
+                src={withBase("/decor/plate-bottom.png")}
                 alt=""
                 className="pointer-events-none absolute bottom-0 left-0 block h-auto w-full [mask-image:linear-gradient(to_top,#000_58%,transparent_100%)]"
               />

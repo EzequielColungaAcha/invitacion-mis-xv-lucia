@@ -1,5 +1,7 @@
 "use client";
 
+import { withBase } from "@/lib/base-path";
+
 const dust = Array.from({ length: 18 }, (_, i) => ({
   left: `${(i * 53) % 100}%`,
   size: i % 3 === 0 ? 3 : 2,
@@ -18,7 +20,7 @@ export function Entrance({
   return (
     <div className={`entrance absolute flex justify-center items-center inset-0 z-20 ${leaving ? "is-leaving" : ""}`}>
       <img
-        src="/decor/plate.png"
+        src={withBase("/decor/plate.png")}
         alt=""
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />

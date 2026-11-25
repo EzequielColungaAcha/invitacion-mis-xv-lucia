@@ -182,18 +182,10 @@
 .plate-mid {
   flex: 1 1 auto;
   min-height: 4rem;
-  background-image: url("/decor/plate-mid.png");
-  background-repeat: repeat-y;
-  background-size: 100% auto;
-  background-position: top center;
 }
 
 .poster {
   background-color: #071426;
-  background-image: url("/decor/plate.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .poster-copy {
@@ -320,11 +312,6 @@
 .entrance {
   display: flex;
   background-color: #071426;
-  background-image:
-    linear-gradient(rgba(7, 20, 38, 0.62), rgba(7, 20, 38, 0.66)),
-    url("/decor/plate.png");
-  background-position: center;
-  background-size: cover;
 }
 
 .seal-float {

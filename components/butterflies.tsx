@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { withBase } from "@/lib/base-path";
 
-const MODEL_URL = "/models/morpho.glb";
+const MODEL_URL = withBase("/models/morpho.glb");
 
 type Bug = {
   group: THREE.Group;
